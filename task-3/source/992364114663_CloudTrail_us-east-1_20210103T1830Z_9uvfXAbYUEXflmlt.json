@@ -1,0 +1,363 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "992364114663",
+        "arn": "arn:aws:iam::992364114663:root",
+        "accountId": "992364114663",
+        "accessKeyId": "ASIA6ODMCWLTWSZ2UD4M",
+        "sessionContext": {
+          "sessionIssuer": {},
+          "webIdFederationData": {},
+          "attributes": {
+            "mfaAuthenticated": "true",
+            "creationDate": "2021-01-03T18:17:56Z"
+          }
+        }
+      },
+      "eventTime": "2021-01-03T18:28:51Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "ListPolicies",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "189.4.79.166",
+      "userAgent": "console.amazonaws.com",
+      "requestParameters": { "onlyAttached": false, "maxItems": 200 },
+      "responseElements": null,
+      "requestID": "83c061d8-7a13-4352-944e-14dd92a13fcd",
+      "eventID": "e3b467c6-6712-4261-aaaf-236f91758f41",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "eventCategory": "Management",
+      "recipientAccountId": "992364114663"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "992364114663",
+        "arn": "arn:aws:iam::992364114663:root",
+        "accountId": "992364114663",
+        "accessKeyId": "ASIA6ODMCWLTWSZ2UD4M",
+        "sessionContext": {
+          "sessionIssuer": {},
+          "webIdFederationData": {},
+          "attributes": {
+            "mfaAuthenticated": "true",
+            "creationDate": "2021-01-03T18:17:56Z"
+          }
+        }
+      },
+      "eventTime": "2021-01-03T18:28:49Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "ListGroupsForUser",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "189.4.79.166",
+      "userAgent": "console.amazonaws.com",
+      "requestParameters": { "userName": "CloudTrail", "maxItems": 1000 },
+      "responseElements": null,
+      "requestID": "22ed4e93-41e8-4251-ba84-256d5f0b35a3",
+      "eventID": "4246c22f-0a40-49cd-a9b3-ddd1c25f1a33",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "eventCategory": "Management",
+      "recipientAccountId": "992364114663"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "992364114663",
+        "arn": "arn:aws:iam::992364114663:root",
+        "accountId": "992364114663",
+        "accessKeyId": "ASIA6ODMCWLTWSZ2UD4M",
+        "sessionContext": {
+          "sessionIssuer": {},
+          "webIdFederationData": {},
+          "attributes": {
+            "mfaAuthenticated": "true",
+            "creationDate": "2021-01-03T18:17:56Z"
+          }
+        }
+      },
+      "eventTime": "2021-01-03T18:28:49Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "AddUserToGroup",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "189.4.79.166",
+      "userAgent": "console.amazonaws.com",
+      "requestParameters": {
+        "groupName": "CloudTrailAdmins",
+        "userName": "CloudTrail"
+      },
+      "responseElements": null,
+      "requestID": "3b14869b-9fa3-4294-9c47-cea8b6646fe7",
+      "eventID": "d164f747-6f51-4653-972a-14be70da446f",
+      "readOnly": false,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "eventCategory": "Management",
+      "recipientAccountId": "992364114663"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "992364114663",
+        "arn": "arn:aws:iam::992364114663:root",
+        "accountId": "992364114663",
+        "accessKeyId": "ASIA6ODMCWLTWSZ2UD4M",
+        "sessionContext": {
+          "sessionIssuer": {},
+          "webIdFederationData": {},
+          "attributes": {
+            "mfaAuthenticated": "true",
+            "creationDate": "2021-01-03T18:17:56Z"
+          }
+        }
+      },
+      "eventTime": "2021-01-03T18:28:48Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "ListUsers",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "189.4.79.166",
+      "userAgent": "console.amazonaws.com",
+      "requestParameters": { "maxItems": 1000 },
+      "responseElements": null,
+      "requestID": "4732ae63-ab61-4bb6-9129-7c4aa5009494",
+      "eventID": "1a9c5f3a-49e0-4531-83f7-170aa6a39286",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "eventCategory": "Management",
+      "recipientAccountId": "992364114663"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "992364114663",
+        "arn": "arn:aws:iam::992364114663:root",
+        "accountId": "992364114663",
+        "accessKeyId": "ASIA6ODMCWLTWSZ2UD4M",
+        "sessionContext": {
+          "sessionIssuer": {},
+          "webIdFederationData": {},
+          "attributes": {
+            "mfaAuthenticated": "true",
+            "creationDate": "2021-01-03T18:17:56Z"
+          }
+        }
+      },
+      "eventTime": "2021-01-03T18:28:48Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "CreateUser",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "189.4.79.166",
+      "userAgent": "console.amazonaws.com",
+      "requestParameters": {
+        "userName": "CloudTrail",
+        "tags": [{ "key": "udacity", "value": "true" }]
+      },
+      "responseElements": {
+        "user": {
+          "path": "/",
+          "userName": "CloudTrail",
+          "userId": "AIDA6ODMCWLT6LH47RDIV",
+          "arn": "arn:aws:iam::992364114663:user/CloudTrail",
+          "createDate": "Jan 3, 2021 6:28:48 PM",
+          "tags": [{ "key": "udacity", "value": "true" }]
+        }
+      },
+      "requestID": "c5d30126-ef2a-480a-ad49-856128e34bcf",
+      "eventID": "768ef003-07f0-47e8-b86c-83b311bebe23",
+      "readOnly": false,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "eventCategory": "Management",
+      "recipientAccountId": "992364114663"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "992364114663",
+        "arn": "arn:aws:iam::992364114663:root",
+        "accountId": "992364114663",
+        "accessKeyId": "ASIA6ODMCWLTWSZ2UD4M",
+        "sessionContext": {
+          "sessionIssuer": {},
+          "webIdFederationData": {},
+          "attributes": {
+            "mfaAuthenticated": "true",
+            "creationDate": "2021-01-03T18:17:56Z"
+          }
+        }
+      },
+      "eventTime": "2021-01-03T18:28:50Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "GetAccountPasswordPolicy",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "189.4.79.166",
+      "userAgent": "console.amazonaws.com",
+      "requestParameters": null,
+      "responseElements": null,
+      "requestID": "20563e9a-5862-4f0a-bde2-ace325f6c7f9",
+      "eventID": "2dc1f705-8273-45c6-a3a0-e344d4575586",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "eventCategory": "Management",
+      "recipientAccountId": "992364114663"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "992364114663",
+        "arn": "arn:aws:iam::992364114663:root",
+        "accountId": "992364114663",
+        "accessKeyId": "ASIA6ODMCWLTWSZ2UD4M",
+        "sessionContext": {
+          "sessionIssuer": {},
+          "webIdFederationData": {},
+          "attributes": {
+            "mfaAuthenticated": "true",
+            "creationDate": "2021-01-03T18:17:56Z"
+          }
+        }
+      },
+      "eventTime": "2021-01-03T18:28:50Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "CreateLoginProfile",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "189.4.79.166",
+      "userAgent": "console.amazonaws.com",
+      "requestParameters": {
+        "userName": "CloudTrail",
+        "passwordResetRequired": false
+      },
+      "responseElements": {
+        "loginProfile": {
+          "userName": "CloudTrail",
+          "createDate": "Jan 3, 2021 6:28:50 PM",
+          "passwordResetRequired": true
+        }
+      },
+      "requestID": "39d4617f-35ee-404b-a13d-57170d415243",
+      "eventID": "39f79d67-2d9b-4374-94a2-7e0e584ae37c",
+      "readOnly": false,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "eventCategory": "Management",
+      "recipientAccountId": "992364114663"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "992364114663",
+        "arn": "arn:aws:iam::992364114663:root",
+        "accountId": "992364114663",
+        "accessKeyId": "ASIA6ODMCWLTWSZ2UD4M",
+        "sessionContext": {
+          "sessionIssuer": {},
+          "webIdFederationData": {},
+          "attributes": {
+            "mfaAuthenticated": "true",
+            "creationDate": "2021-01-03T18:17:56Z"
+          }
+        }
+      },
+      "eventTime": "2021-01-03T18:28:49Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "GetPolicy",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "189.4.79.166",
+      "userAgent": "console.amazonaws.com",
+      "requestParameters": {
+        "policyArn": "arn:aws:iam::aws:policy/IAMUserChangePassword"
+      },
+      "responseElements": null,
+      "requestID": "cc839497-58d0-436b-af99-4d6f4ea822a7",
+      "eventID": "df6fabab-8a51-4116-99e3-74b3e959c675",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "eventCategory": "Management",
+      "recipientAccountId": "992364114663"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "992364114663",
+        "arn": "arn:aws:iam::992364114663:root",
+        "accountId": "992364114663",
+        "accessKeyId": "ASIA6ODMCWLTWSZ2UD4M",
+        "sessionContext": {
+          "sessionIssuer": {},
+          "webIdFederationData": {},
+          "attributes": {
+            "mfaAuthenticated": "true",
+            "creationDate": "2021-01-03T18:17:56Z"
+          }
+        }
+      },
+      "eventTime": "2021-01-03T18:28:52Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "ListAccountAliases",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "189.4.79.166",
+      "userAgent": "console.amazonaws.com",
+      "requestParameters": { "maxItems": 1000 },
+      "responseElements": null,
+      "requestID": "69ba6372-89ac-49f9-b3ea-c825023bfa9c",
+      "eventID": "6523890c-b298-4b41-83e0-b36291a739ee",
+      "readOnly": true,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "eventCategory": "Management",
+      "recipientAccountId": "992364114663"
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "Root",
+        "principalId": "992364114663",
+        "arn": "arn:aws:iam::992364114663:root",
+        "accountId": "992364114663",
+        "accessKeyId": "ASIA6ODMCWLTWSZ2UD4M",
+        "sessionContext": {
+          "sessionIssuer": {},
+          "webIdFederationData": {},
+          "attributes": {
+            "mfaAuthenticated": "true",
+            "creationDate": "2021-01-03T18:17:56Z"
+          }
+        }
+      },
+      "eventTime": "2021-01-03T18:28:49Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "AttachUserPolicy",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "189.4.79.166",
+      "userAgent": "console.amazonaws.com",
+      "requestParameters": {
+        "userName": "CloudTrail",
+        "policyArn": "arn:aws:iam::aws:policy/IAMUserChangePassword"
+      },
+      "responseElements": null,
+      "requestID": "3a232d72-af8a-4d42-8e3a-6d303512e401",
+      "eventID": "422be179-30d8-459f-b6af-45bb306bc948",
+      "readOnly": false,
+      "eventType": "AwsApiCall",
+      "managementEvent": true,
+      "eventCategory": "Management",
+      "recipientAccountId": "992364114663"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+Group hierarchy,Region,Description,Service,Upfront,Monthly,First 12 months total,Currency,Configuration summary
+My Estimate,US East (N. Virginia),AWS Cloud Architect - Project 2 - Task 2,Amazon Virtual Private Cloud (VPC),0,526.5,6318.00,USD,Number of NAT Gateways (2)
+My Estimate,US East (N. Virginia),AWS Cloud Architect - Project 2 - Task 2 ,S3 Standard,0,1177.6,14131.20,USD,S3 Standard storage (50 TB per month)
+My Estimate,US East (N. Virginia),AWS Cloud Architect - Project 2 - Task 2 ,Data Transfer,0,0,0.00,USD,"DT Inbound: Internet (50 TB per month), DT Outbound: Amazon CloudFront (50 TB per month)"
+My Estimate,US East (N. Virginia),AWS Cloud Architect - Project 2 - Task 2 - Scenario 3,Amazon EC2,0,7041.96,84503.52,USD,"Operating system (Linux), Quantity (36), Pricing strategy (EC2 Instance Savings Plans 1 Year No Upfront), Storage for each EC2 instance (General Purpose SSD (gp2)), Storage amount (100 GB), Instance type (a1.metal)"
+My Estimate,US East (N. Virginia),AWS Cloud Architect - Project 2 - Task 2 ,Application Load Balancer,0,1704.1000000000001,20449.20,USD,Number of Application Load Balancers (4)
+My Estimate,US East (N. Virginia),AWS Cloud Architect - Project 2 - Task 2 - Scenario 3,Amazon Aurora MySQL-Compatible,0,5972.4,71668.80,USD,"Change records per statement (0.38), Nodes (2), Instance Type (db.r4.8xlarge), Instance Family (Memory optimized), Pricing Model (Reserved), Lease Offering Term (1yr), Purchase Option (No Upfront), Storage amount (5 TB)"
+My Estimate,US East (N. Virginia),AWS Cloud Architect - Project 2 - Task 2 - Scenario 3,S3 Standard - Infrequent Access,0,640,7680.00,USD,S3 Infrequent Access storage (50 TB per month)
+My Estimate,US East (N. Virginia),AWS Cloud Architect - Project 2 - Task 2 - Scenario 3,Data Transfer,0,0,0.00,USD,
+My Estimate,US East (N. Virginia),AWS Cloud Architect - Project 2 - Task 2 - Scenario 3,S3 Standard,0,1177.6,14131.20,USD,S3 Standard storage (50 TB per month)
+My Estimate,US East (N. Virginia),AWS Cloud Architect - Project 2 - Task 2 - Scenario 3,Data Transfer,0,0,0.00,USD,"DT Inbound: Internet (0 TB per month), DT Outbound: Amazon CloudFront (0 TB per month)"
+
+
+
+Acknowledgement
+"* AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors, including your actual usage of AWS services."
+
+Here is the rationale for using the larger budget.
+ - More performance:
+   - Larger number of application and web servers;
+   - Larger database servers;
+ - Backups:
+   - Two S3 buckets for backup: 1 ready for production load (in a different region)
+   and 1 at Glacier.
