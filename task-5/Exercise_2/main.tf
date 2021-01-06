@@ -1,42 +1,26 @@
 # TODO: Designate a cloud provider, region, and credentials
 provider "aws" {
-  access_key = ""
-  secret_key = ""
   region = "us-west-2"
 }
 
 module "vpc" {
-  source = "../../"
-
-  name = "udacity-simple-vpc"
+  source = "terraform-aws-modules/vpc/aws"
+  name = "udacity-lambda-vpc"
   cidr = "10.0.0.0/16"
-  azs             = ["us-west-2"]
+  azs             = ["us-west-2a", "us-west-2b", "us-west-2c"]
   private_subnets = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
   public_subnets  = ["10.0.101.0/24", "10.0.102.0/24", "10.0.103.0/24"]
-
-  enable_ipv6 = true
-
-  enable_nat_gateway = true
-  single_nat_gateway = true
-
-  public_subnet_tags = {
-    Name = "overridden-name-public"
-  }
-
+  enable_nat_gateway = false
+  enable_vpn_gateway = false
   tags = {
-    Owner       = "user"
+    Terraform = "true"
     Environment = "dev"
-  }
-
-  vpc_tags = {
-    Name = "vpc-name"
   }
 }
 
 resource "aws_iam_role_policy" "test_policy" {
   name = "test_policy"
   role = aws_iam_role.iam_for_lambda.id
-
   policy = <<-EOF
   {
     "Version": "2012-10-17",
@@ -56,10 +40,8 @@ resource "aws_iam_role_policy" "test_policy" {
   EOF
 }
 
-
 resource "aws_iam_role" "iam_for_lambda" {
   name = "iam_for_lambda"
-
   assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -77,19 +59,58 @@ resource "aws_iam_role" "iam_for_lambda" {
 EOF
 }
 
-resource "aws_lambda_function" "test_lambda" {
+resource "aws_iam_policy" "lambda_logging" {
+  name        = "lambda_logging"
+  path        = "/"
+  description = "IAM policy for logging from a lambda"
+
+  policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents"
+      ],
+      "Resource": "arn:aws:logs:*:*:*",
+      "Effect": "Allow"
+    }
+  ]
+}
+EOF
+}
+
+resource "aws_iam_role_policy_attachment" "lambda_logs" {
+  role       = aws_iam_role.iam_for_lambda.name
+  policy_arn = aws_iam_policy.lambda_logging.arn
+}
+
+variable "lambda_function_name" {
+  default = "greet_lambda"
+}
+
+resource "aws_cloudwatch_log_group" "example" {
+  name              = "/aws/lambda/${var.lambda_function_name}"
+  retention_in_days = 14
+}
+
+resource "aws_lambda_function" "greet_lambda" {
   filename      = "greet_lambda.zip"
-  function_name = "greet_lambda"
+  function_name = var.lambda_function_name
   role          = aws_iam_role.iam_for_lambda.arn
-  handler       = "exports.test"
-
+  handler       = "greet_lambda.lambda_handler"
+  source_code_hash = filebase64sha256("greet_lambda.zip")
   runtime = "python3.8"
-
   vpc_config {
-    subnet_ids = ["subnet-7c1daf21"]
-    security_group_ids = ["sg-6fd86d4c"]
+    subnet_ids = module.vpc.private_subnets
+    security_group_ids = [module.vpc.default_security_group_id]
   }
-
+  depends_on = [
+    aws_iam_role_policy_attachment.lambda_logs,
+    aws_cloudwatch_log_group.example,
+  ]
   environment {
     variables = {
       foo = "bar"
