@@ -1,0 +1,125 @@
+#+TITLE: Social Media Application - Infrastructure Costs
+#+author: Mateus Costa
+#+description: AWS Cloud Architect - Project 2 - Task 2 - Scenario 1
+
+  Here we present you the ~infrastructure costs~ for a social media application.
+
+  First, here are the system requirements:
+  - 50,000 monthly users;
+  - Region: us-east-1;
+  - Infrastructure elements:
+    - One VPC, Two AZs and 4 subnets (2 Public, 2 Private);
+    - A NAT Gateway;
+    - Cloudfront distribution;
+    - S3 Bucket;
+    - Web and Application Servers (EC2);
+    - DB Servers (RDS Aurora).
+
+  Financially, this application should have a monthly spend between $8,000 and
+  $10,000, initially, and be prepared to move to $6,500 in hard times and to
+  $20,000 if the application is a success.
+
+  In terms of load, we expect that:
+  - Each user has an average of 1GB of static data stored---total 50TB stored in
+    S3;
+  - Each user has an average of 100MB of database data stored---total of 5TB
+    stored in RDS;
+  - Each user transfers an average of 1GB of data per month---total 50TB
+    transferred (mostly static files);
+  - 30% of the users (15,000 people) are online most of the time (90%);
+
+  We are assuming that:
+  - Every 1000 users will required 8GB of RAM and 2 CPU Core;
+    - This means:
+      - 120 GB of RAM and 30 CPUs with the average load;
+      - 400 GB of RAM and 100 CPUs with the highest load (100% of users).
+
+* Details by AWS Service
+
+** Scenario 1 - $8,000-$10,000
+
+   - Total Cost: 8,995.04 USD
+     - VPC: 526.50 USD
+     - Aurora: 3,767.80 USD
+     - Load Balancing: 393.38 USD
+     - EC2: 3,129.76 USD
+     - S3: 1,177.60 USD
+
+*** VPC
+**** NAT Gateway, Subnet, AZs
+     - 2 NAT Gateways with 2.5 TB/Month per year
+*** S3
+    - 50TB Stored
+    - Served by Cloudfront
+*** EC2 (Application and Web Servers)
+**** Regular Load
+     - 8 a1.metal web servers (16 vCPUs, 32GiB)
+     - 8 a1.metal application servers (16 vCPUs, 32GiB)
+**** Load balance
+     - 4 application load balancers with 5 TB per month of processed bytes
+*** RDS Aurora(Database Servers)
+**** Master and Read Replica
+     - 2 Instances
+     - 5 TB per month per instance
+     - 16 vCPUs/122 GIB
+
+** Scenario 2 - Reduced Cost Estimate - $6,500
+
+   For this scenario, we are assuming that the data that is stored and will be
+   transferred won't be affected and that the cost reduction will come from
+   penalties in the system performance. For this reason, the machines that are
+   serving the system will be downsized.
+
+   - Total Cost: 8,995.04 USD
+     - VPC: 526.50 USD
+     - Aurora: 2,672.80 USD
+     - Load Balancing: 393.38 USD
+     - EC2: 1,564.88 USD
+     - S3: 1,177.60 USD
+
+*** VPC
+**** NAT Gateway, Subnet, AZs
+     - 2 NAT Gateways with 2.5 TB per month
+*** S3
+    - 50TB Stored
+    - Served by Cloudfront
+*** EC2 (Application and Web Servers)
+**** Regular Load
+     - 4 a1.metal web servers (16 vCPUs, 32GiB)
+     - 4 a1.metal application servers (16 vCPUs, 32GiB)
+**** Load balance
+     - 4 application load balancers with 5 TB per month of processed bytes
+*** RDS Aurora(Database Servers)
+**** Master and Read Replica
+     - 2 Instances
+     - 5 TB per month per instance
+     - 8 vCPUs/61 GIB
+
+** Scenario 3 - $18,000-$20,000
+
+   For Scenario 3, the larger budget will allow:
+   - More performance:
+     - Larger number of application and web servers;
+     - Larger database servers;
+   - Backups:
+     - Two S3 buckets for backup: 1 ready for production load (in a different
+       region) and 1 at Glacier.
+
+*** VPC
+**** NAT Gateway, Subnet, AZs
+     - 2 NAT Gateways with 2.5 TB/Month per year
+*** S3
+    - 3 instances (2 Standard and 1 Glacier);
+    - 50TB Stored at each;
+    - Served by Cloudfront.
+*** EC2 (Application and Web Servers)
+**** Regular Load
+     - 18 a1.metal web servers (16 vCPUs, 32GiB)
+     - 18 a1.metal application servers (16 vCPUs, 32GiB)
+**** Load balance
+     - 4 application load balancers with 50 TB per month of processed bytes
+*** RDS Aurora(Database Servers)
+**** Master and Read Replica
+     - 2 Instances
+     - 5 TB per month per instance
+     - 32 vCPUs/244 GIB
