@@ -1,0 +1,27 @@
+* AWS Cloud Architect - Project 2 Results
+
+    Here we present you the deliverables for the Project 2: Design, Provision and Monitor AWS Infrastructure at Scale. 
+
+    Here you will find:
+    - Terraform files for building the required Infrastructure;
+    - Pictures and diagrams for each task;
+    - CSVs with the costs estimate for 3 different infrastructes.
+
+    This is all part of the course "AWS Cloud Architecture" from udacity.
+
+    Here is how the project files are divided:
+    - Task 1
+        - Two diagrams of different infrastructes;
+    - Task 2
+        - Rationale and cost estimate for 3 different infrastructures;
+    - Task 3
+        - CloudTrail logs showing the required steps and the updated password policy;
+    - Task 4
+        - Cloudwatch billing alarm;
+    - Task 5
+        - Terraform files for 2 infrastructures and pictures of the results;
+    - Task 6
+        - Results of running the terraform destroy command in the setup above;
+
+
+    Feel free to reach me with any doubts.
